@@ -1,36 +1,64 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🍲 ServeAnn: Rescue Food, Nourish Lives
 
-## Getting Started
+ServeAnn is an AI-powered food rescue platform built to bridge the gap between food waste and food insecurity. It seamlessly connects restaurants, event organizers, and generous donors with local shelters and volunteer drivers in real-time.
 
-First, run the development server:
+![ServeAnn Banner](https://serveann.vercel.app/favicon.ico) <!-- Placeholder, can be replaced with actual screenshot -->
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+**Live Deployment:** [https://serveann.vercel.app](https://serveann.vercel.app)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 The Problem & Solution
+Tons of perfectly good food is wasted daily at hotels and events because there is no fast, reliable logistical network to transport it to NGOs before it spoils. 
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+**ServeAnn solves this with a 3-step process:**
+1. **📸 Snap & Share:** Donors take a photo of surplus food. Our AI instantly estimates the weight, detects the food type, categorizes it (veg/non-veg), and calculates a safe consumption window.
+2. **🤖 Smart Matching:** Our matching engine automatically finds the nearest eligible shelter based on distance (within 25km), available capacity, and dietary rules (e.g., matching vegetarian food only to veg-only ashrams).
+3. **🚗 Swift Delivery:** Volunteer drivers receive real-time dispatch alerts, claim the route, and deliver the food, earning "Impact Points" for meals served and CO₂ saved.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🏗️ System Architecture
 
-## Learn More
+### Tech Stack
+* **Framework:** [Next.js 14](https://nextjs.org/) (App Router)
+* **Language:** TypeScript
+* **Styling:** [TailwindCSS v4](https://tailwindcss.com/) (Custom Indian-inspired theme palette)
+* **State Management:** [Zustand](https://github.com/pmndrs/zustand) (with `localStorage` persistence for the hackathon MVP)
+* **Deployment:** [Vercel](https://vercel.com)
 
-To learn more about Next.js, take a look at the following resources:
+### Core Modules
+* `lib/store.ts`: Centralized Zustand store handling Auth, Data (Donations, Matches, Users), and Impact calculations.
+* `lib/matching.ts`: The geospatial and capacity-aware matching algorithm.
+* `lib/mock-ai.ts`: Simulated Computer Vision API that categorizes Indian cuisine, estimates weight, and calculates expiry hours.
+* `app/dashboard/`: Role-based protected routes (Donor, Shelter, Driver dashboards).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🏃‍♂️ Running Locally
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/himadrijarathore/serveann.git
+   cd serveann
+   ```
 
-## Deploy on Vercel
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+3. **Start the development server:**
+   ```bash
+   npm run dev
+   ```
+   Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🔑 Demo Credentials
+The app comes pre-seeded with synthetic data. Use these to log in and test the different dashboards (Password for all is `demo123`):
+* **Donor:** `donor@serveann.com`
+* **Shelter:** `shelter@serveann.com`
+* **Driver:** `driver@serveann.com`
+
+## 🎨 Design System
+ServeAnn features a custom Indian-heritage aesthetic, utilizing:
+* **Typography:** *Playfair Display* (Regal serif headings) and *Lato* (Clean body text).
+* **Colors:** Marigold (Saffron), Peacock Blue, Kumkum Red, and Antique Gold.
+* **Motifs:** CSS-based Mughal architectural arches (`.indian-arch`) and SVG block-print/mandala backgrounds.
+
+---
+*Made with ❤️ for India.*
