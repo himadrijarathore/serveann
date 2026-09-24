@@ -1,0 +1,96 @@
+@import 'tailwindcss';
+
+@theme inline {
+  /* Richer Indian Theme Palette */
+  --color-primary: #E65C00; /* Deep Marigold / Saffron */
+  --color-primary-light: #FF8533;
+  --color-primary-dark: #B34700;
+  
+  --color-secondary: #0B4F6C; /* Peacock Blue */
+  --color-secondary-light: #1A759F;
+  --color-secondary-dark: #042E40;
+  
+  --color-accent: #8B0029; /* Deep Rose / Kumkum */
+  --color-accent-light: #B80036;
+  
+  --color-gold: #D4AF37; /* Antique Gold */
+  --color-gold-light: #F3D266;
+  
+  --color-cream: #FDF8F5; /* Warm Chai Cream */
+  --color-cream-dark: #F2E8E1;
+  
+  --color-charcoal: #2C3E50; /* Deep Slate */
+  --color-charcoal-light: #546E7A;
+  
+  --font-sans: var(--font-lato), system-ui, -apple-system, sans-serif;
+  --font-heading: var(--font-playfair), Georgia, serif;
+}
+
+body {
+  background-color: var(--color-cream);
+  color: var(--color-charcoal);
+  font-family: var(--font-sans);
+}
+
+h1, h2, h3, h4, h5, h6, .font-heading {
+  font-family: var(--font-heading);
+}
+
+/* Indian Architectural Arch classes */
+.indian-arch {
+  border-radius: 50% 50% 0 0 / 20% 20% 0 0;
+  box-shadow: 0 4px 15px -3px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--color-gold-light);
+}
+
+.indian-arch-sm {
+  border-radius: 50% 50% 0 0 / 15% 15% 0 0;
+}
+
+.indian-border {
+  border: 2px solid var(--color-gold);
+  padding: 4px;
+  position: relative;
+}
+.indian-border::after {
+  content: '';
+  position: absolute;
+  top: 4px; bottom: 4px; left: 4px; right: 4px;
+  border: 1px dashed var(--color-primary);
+  pointer-events: none;
+}
+
+.paisley-bg {
+  position: relative;
+  overflow: hidden;
+}
+
+.paisley-bg::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: radial-gradient(var(--color-gold) 1.5px, transparent 1.5px);
+  background-size: 24px 24px;
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.glass-card {
+  background: rgba(253, 248, 245, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(212, 175, 55, 0.3); /* Gold tint */
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+}
+
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes float { 
+  0% { transform: translateY(0px); } 
+  50% { transform: translateY(-10px); } 
+  100% { transform: translateY(0px); } 
+}
+
+.animate-fade-in { animation: fadeIn 0.5s ease-out; }
+.animate-slide-up { animation: slideUp 0.5s ease-out; }
+.animate-float { animation: float 6s ease-in-out infinite; }
