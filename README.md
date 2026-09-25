@@ -24,9 +24,9 @@ Tons of perfectly good food is wasted daily at hotels and events because there i
 * **Deployment:** [Vercel](https://vercel.com)
 
 ### Core Modules
-* `lib/store.ts`: Centralized Zustand store handling Auth, Data (Donations, Matches, Users), and Impact calculations.
+* `lib/store.ts`: Centralized Zustand store handling Auth, Data (Donations, Matches, Users), and Impact calculations (currently using localStorage for the hackathon demo).
 * `lib/matching.ts`: The geospatial and capacity-aware matching algorithm.
-* `lib/mock-ai.ts`: Simulated Computer Vision API that categorizes Indian cuisine, estimates weight, and calculates expiry hours.
+* `lib/vision.ts`: Computer Vision utility for categorizing Indian cuisine, estimating weight, and calculating expiry hours (runs in heuristic fallback mode for the demo).
 * `app/dashboard/`: Role-based protected routes (Donor, Shelter, Driver dashboards).
 
 ## 🏃‍♂️ Running Locally

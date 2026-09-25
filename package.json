@@ -1,6 +1,8 @@
 {
   "name": "serveann",
-  "version": "0.1.0",
+  "version": "1.0.0",
+  "description": "ServeAnn - AI Food Rescue Platform for Ami Hacks",
+  "author": "ServeAnn Team",
   "private": true,
   "scripts": {
     "dev": "next dev",

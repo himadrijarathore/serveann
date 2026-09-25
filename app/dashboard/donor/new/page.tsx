@@ -6,7 +6,7 @@ import { useStore } from "@/lib/store";
 import { Card } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/Input";
-import { analyzeFoodImage } from "@/lib/mock-ai";
+import { analyzeFoodImage } from "@/lib/vision";
 import { FoodCategory } from "@/lib/types";
 
 export default function NewDonationPage() {
